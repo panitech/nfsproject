@@ -1,3 +1,4 @@
+# This is for user creation
 - hosts: node1
   become: True
   tasks:
