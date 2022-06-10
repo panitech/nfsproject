@@ -1,0 +1,16 @@
+- hosts: node1
+  become: yes
+  vars:
+    pkg: "httpd"
+    src: "httpd"
+  tasks:
+   - name: Install {{ pkg }}
+     yum:
+       name: "{{ pkg }}"
+       state: present
+
+   - name: start service
+     service:
+       name: "{{ src }}"
+       state: started
+       enabled: yes
