@@ -1,4 +1,4 @@
-#### NFS SERVER DEPLOYEMENT
+# NFS SERVER DEPLOYEMENT
 
 ## Use cmd below to run the plabook
 ```
