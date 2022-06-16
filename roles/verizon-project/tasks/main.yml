@@ -13,3 +13,8 @@
   import_tasks: client1.yml
   when: ansible_nodename == 'node1'
   tags: client1
+
+- name: Include client2.yml tasks
+  import_tasks: client2.yml
+  when: ansible_nodename == 'node2'
+  tags: client2

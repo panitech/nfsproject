@@ -4,4 +4,6 @@
      - name: RUN ROLE
        include_role:
           name: verizon-project
-       tags: client1
+       tags: 
+        - client1
+        - client2
