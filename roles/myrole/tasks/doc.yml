@@ -1,0 +1,6 @@
+- name: Update doc page
+  lineinfile:
+     path: /var/www/html/index.html
+     line: "This is my first ANSIBLE ROLE"
+     create: yes
+  notify: Restart http

@@ -1,0 +1,6 @@
+---
+# defaults file for myrole
+
+port: 80
+pkg: httpd
+service: http

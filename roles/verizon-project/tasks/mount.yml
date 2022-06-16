@@ -1,0 +1,17 @@
+- name: Format Drive
+  filesystem:
+    fstype: ext4
+    dev: "{{ drive }}"
+
+- name: Create NFS share DIR
+  file:
+    path: "{{ nfss }}"
+    state: directory
+    mode: "0777"
+
+- name: Mount {{ drive }}
+  mount:
+    src: "{{ drive }}"
+    path: "{{ nfss }}"
+    state: mounted
+    fstype: ext4

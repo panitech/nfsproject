@@ -1,0 +1,31 @@
+- name: Install
+  yum:
+    name: nfs-utils
+    state: latest
+
+- name: Enable and Start Services
+  service:
+    name: "{{ item }}"
+    state: started
+    enabled: yes
+  loop: "{{ svcs }}"
+
+- name: Allow Firewall
+  firewalld:
+    service: "{{ item }}"
+    permanent: yes
+    immediate: yes
+    state: enabled
+  loop: "{{ fw }}"
+
+- name: SELinux Enforce
+  selinux:
+    policy: targeted
+    state: enforcing
+
+- name: Copy config file
+  template:
+     src: exports.j2
+     dest: /etc/exports
+     mode: 0644
+  notify: Restart NFS

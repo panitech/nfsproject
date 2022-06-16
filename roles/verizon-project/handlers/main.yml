@@ -1,0 +1,7 @@
+---
+# handlers file for verizon-project
+- name: Restart NFS
+  service:
+     name: nfs-server
+     state: restarted
+

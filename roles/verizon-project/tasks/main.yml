@@ -1,0 +1,15 @@
+---
+# tasks file for verizon-project
+#
+- name: Include Mount.yml tasks
+  import_tasks: mount.yml
+  when: ansible_nodename == 'node3'
+
+- name: Include nfsserver.yml tasks
+  import_tasks: nfsserver.yml
+  when: ansible_nodename == 'node3'
+
+- name: Include client1.yml tasks
+  import_tasks: client1.yml
+  when: ansible_nodename == 'node1'
+  tags: client1

@@ -1,0 +1,10 @@
+- name: Install HTTPD
+  yum:
+    name: "{{ pkg }}"
+    state: present
+
+- name: Start "{{ pkg }}"
+  service:
+    name: "{{ pkg }}"
+    state: started
+    enabled: yes

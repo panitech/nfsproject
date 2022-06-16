@@ -1,0 +1,7 @@
+- hosts: all
+  become: yes
+  tasks:
+    - name: Deploy your WEB SITE
+      include_role:
+          name: myrole
+      when: ansible_nodename == node3

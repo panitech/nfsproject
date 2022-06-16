@@ -1,0 +1,25 @@
+---
+# defaults file for verizon-project
+
+nfss: /verizon-data-shared-drive
+c1: /verizon-client1
+c2: /verizon-client2   #Mount point on clien2
+
+n1: node1
+n2: node2
+n3: node3
+
+# Firewall services
+
+fw:
+  - nfs
+  - mountd
+  - rpc-bind
+
+# Daemons or services
+
+svcs:
+  - nfs-server
+  - rpcbind
+
+drive: /dev/nvme0n3

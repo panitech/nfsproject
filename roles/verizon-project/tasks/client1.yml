@@ -1,0 +1,15 @@
+- name: Create mount
+  file:
+    path: "{{ c1 }}"
+    state: directory
+  tags: client1
+
+- name: mount to NFS
+  mount:
+    src: node3:/verizon-data-shared-drive
+    path: /verizon-client1
+#    path: '"{{ n3 }}":"{{ nfss }}"'
+#    src: "{{ c1 }}"
+    state: mounted
+    fstype: nfs
+  tags: client1

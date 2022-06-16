@@ -1,0 +1,13 @@
+---
+# tasks file for myrole
+- name: INSTALL
+  import_tasks: install.yml
+
+- name: START FW
+  import_tasks: firewall.yml
+
+- name: CONFIG PAGE
+  import_tasks: config.yml
+
+- name: DOCUMANTATION WEB
+  import_tasks: doc.yml

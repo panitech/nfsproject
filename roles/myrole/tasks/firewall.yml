@@ -1,0 +1,6 @@
+- name: Allow on FW
+  firewalld:
+      service: "{{ service }}"
+      permanent: yes
+      immediate: yes
+      state: enabled

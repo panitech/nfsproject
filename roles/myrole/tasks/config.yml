@@ -1,0 +1,8 @@
+- name: Copy the template
+  template:
+    src: apache.j2
+    dest: /etc/httpd/conf/httpd.conf
+    owner: root
+    group: root
+    mode: '0644'
+  notify: Restart http
