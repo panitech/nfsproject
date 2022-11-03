@@ -1,0 +1,10 @@
+- hosts: all
+  become: yes
+  tasks:
+        - name: Install a package
+          yum: name=tree state=present
+
+        - name: Install a package
+          yum:
+                name: tree
+                state: present
