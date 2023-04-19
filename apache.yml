@@ -1,6 +1,6 @@
 # This Playbook to configure Apache server
 # TEST
-- hosts: node3
+- hosts: all
   become: yes
   tasks:
   - name: Install httpd
