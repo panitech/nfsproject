@@ -1,13 +1,1 @@
-- name: Create mount
-  file:
-    path: "{{ c2 }}"
-    state: directory
-  tags: client2
 
-- name: mount to NFS
-  mount:
-    src: '{{ n3 }}:{{ nfss }}'
-    path: "{{ c2 }}"
-    state: mounted
-    fstype: nfs
-  tags: client2
